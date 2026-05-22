@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Eval",
+      "type": "shell",
+      "command": "npm run eval",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Sends all questions to your Copilot agent and generates ghcp_eval_traces.json"
+    },
+    {
+      "label": "Validate Output",
+      "type": "shell",
+      "command": "npm run validate",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "detail": "Validates the generated traces JSON against the leaderboard schema"
+    }
+  ]
+}

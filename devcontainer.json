@@ -1,0 +1,35 @@
+{
+  "name": "Gastown Eval Kit",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+
+  // Install dependencies automatically when container is created
+  "postCreateCommand": "npm install",
+
+  // Forward GitHub authentication (required for Copilot SDK)
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  // VS Code settings inside the container
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "task.allowAutomaticTasks": "on"
+      },
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "dbaeumer.vscode-eslint",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+
+  // Ensure the GitHub Copilot token is forwarded into the container
+  "secrets": {
+    "GITHUB_TOKEN": {
+      "description": "GitHub token for Copilot auth (auto-forwarded by VS Code if logged in)"
+    }
+  }
+}

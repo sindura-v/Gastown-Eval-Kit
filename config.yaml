@@ -22,7 +22,7 @@ agent:
 model:
   # Copilot model to use for evaluation
   # Common options: gpt-5.3-codex, gpt-4.1, claude-sonnet-4
-  name: "gpt-5.3-codex"
+  name: "gpt-4.1"
 
 # --- Questions ---
 questions:
